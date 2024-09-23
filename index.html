@@ -1,0 +1,54 @@
+<link rel="icon" type="image/png" href="favicon.ico">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCHiT Engine</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">SEARCHiT</div>
+    </div>
+    <div id="content" class="content hidden">
+        <header>
+            <div class="logo-container">
+                <img src="./images/logo-transparent.png" alt="SEARCHiT Logo" class="logo">
+            </div>
+        </header>
+        <main>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Discover something new...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="history-container">
+                <div class="history-header">
+                    <h2><i class="fas fa-history"></i> Recent Searches</h2>
+                    <button id="clear-history"><i class="fas fa-trash-alt"></i> Clear</button>
+                </div>
+                <ul id="search-history"></ul>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+                apiKey: "AIzaSyAyCQNtxwEpE8kYDDPspRVTOqmf7YlFZK4",
+                authDomain: "searchit-bbe17.firebaseapp.com",
+                projectId: "searchit-bbe17",
+                storageBucket: "searchit-bbe17.appspot.com",
+                messagingSenderId: "1049689409565",
+                appId: "1:1049689409565:web:adf510e1b114749af0def4"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+</body>
+</html>
